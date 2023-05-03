@@ -51,7 +51,7 @@ app.use('/api/count', countRoutes);
 mongoose
 	.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cnps.g2tk7fe.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
 	.then(() => {
-		app.listen(9000);
+		app.listen(process.env.PORT || 9000);
 	})
 	.catch((error) => {
 		console.log(error);
